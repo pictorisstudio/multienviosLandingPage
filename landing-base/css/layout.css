@@ -1,0 +1,7 @@
+.site-shell { overflow-x: clip; }
+.container { margin-inline: auto; max-width: var(--container-width); padding-inline: clamp(1rem, 4vw, 2.5rem); width: 100%; }
+.section { padding-block: var(--space-2xl); }
+.section-intro { display: grid; gap: 1.5rem; margin-bottom: clamp(2.5rem, 5vw, 4.5rem); max-width: 920px; }
+.section-intro > p:last-child { color: var(--color-text-muted); max-width: 660px; }
+.section-intro--split { max-width: none; }
+@media (min-width: 860px) { .section-intro--split { align-items: end; grid-template-columns: 1.35fr .65fr; } }

@@ -1,0 +1,24 @@
+.testimonials-section__grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+}
+
+.testimonial-card {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.testimonial-card__person {
+  align-items: center;
+  display: flex;
+  gap: var(--space-md);
+}
+
+.testimonial-card__image {
+  border-radius: 50%;
+  height: 64px;
+  width: 64px;
+}
+
+.testimonial-card__quote {
+  color: var(--color-text-muted);
+}

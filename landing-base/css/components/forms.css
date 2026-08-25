@@ -1,0 +1,83 @@
+.form {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.form__row {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.form__field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.form__label {
+  color: var(--color-secondary);
+  font-weight: 800;
+}
+
+.form__control {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  min-height: 48px;
+  padding: 0.75rem 0.9rem;
+  width: 100%;
+}
+
+.form__control:focus {
+  border-color: var(--color-primary);
+}
+
+.form__control[aria-invalid="true"] {
+  border-color: var(--color-error);
+}
+
+.form__error {
+  color: var(--color-error);
+  font-size: var(--text-sm);
+  min-height: 1.2em;
+}
+
+.form__status {
+  border-radius: var(--radius-md);
+  font-weight: 800;
+  padding: var(--space-sm) var(--space-md);
+}
+
+.form__status:empty {
+  display: none;
+}
+
+.form__status--success {
+  background: color-mix(in srgb, var(--color-success) 12%, white);
+  color: var(--turquoise);
+}
+
+.form__status--error {
+  background: color-mix(in srgb, var(--color-error) 12%, white);
+  color: var(--color-error);
+}
+
+.form__checkbox {
+  align-items: flex-start;
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.form__checkbox input {
+  margin-top: 0.35rem;
+}
+
+.form__honeypot {
+  display: none;
+}
+
+@media (min-width: 720px) {
+  .form__row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,41 @@
+.floating-actions {
+  bottom: var(--space-md);
+  display: grid;
+  gap: var(--space-sm);
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  right: var(--space-md);
+  transform: translateY(12px);
+  transition: opacity var(--transition-normal), transform var(--transition-normal);
+  z-index: var(--z-floating);
+}
+
+.floating-actions.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.floating-actions__button {
+  align-items: center;
+  border: 0;
+  border-radius: 999px;
+  box-shadow: var(--shadow-md);
+  display: inline-flex;
+  font-size: 1.2rem;
+  height: 52px;
+  justify-content: center;
+  text-decoration: none;
+  width: 52px;
+}
+
+.floating-actions__button--whatsapp {
+  background: var(--turquoise);
+  color: var(--blue);
+}
+
+.floating-actions__button--top {
+  background: var(--color-secondary);
+  color: #fff;
+}

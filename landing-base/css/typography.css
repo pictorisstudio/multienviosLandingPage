@@ -1,0 +1,14 @@
+body { background: var(--color-background); color: var(--color-text); font-family: var(--font-body); font-size: var(--text-md); line-height: 1.55; }
+h1,h2,h3 { color: var(--color-heading); font-family: var(--font-heading); font-weight: 800; letter-spacing: -0.055em; line-height: .98; margin: 0; }
+h1 { font-size: var(--text-2xl); font-weight: 900; }
+h2 { font-size: var(--text-xl); }
+h3 { font-size: var(--text-lg); }
+p { margin: 0; }
+em { color: var(--blue); font-style: normal; }
+.eyebrow { align-items: center; color: var(--color-heading); display: flex; font-size: var(--text-xs); font-weight: 800; gap: .65rem; letter-spacing: .09em; text-transform: uppercase; }
+.eyebrow > span { background: var(--turquoise); border-radius: 50%; height: .6rem; width: .6rem; }
+.eyebrow--light { color: var(--white); }
+.mini-label { color: var(--turquoise); font-size: .66rem; font-weight: 800; letter-spacing: .1em; }
+.placeholder-note { color: var(--color-text-muted); font-size: .72rem; }
+
+[data-theme="dark"] em { color: var(--turquoise); }

@@ -1,0 +1,37 @@
+.process-section__list {
+  counter-reset: process;
+  display: grid;
+  gap: var(--space-md);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.process-step {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  display: grid;
+  gap: var(--space-sm);
+  padding: var(--space-lg);
+  position: relative;
+}
+
+.process-step::before {
+  background: var(--color-primary);
+  border-radius: 999px;
+  color: #fff;
+  content: counter(process, decimal-leading-zero);
+  counter-increment: process;
+  display: inline-grid;
+  font-weight: 900;
+  height: 42px;
+  place-items: center;
+  width: 42px;
+}
+
+@media (min-width: 860px) {
+  .process-section__list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

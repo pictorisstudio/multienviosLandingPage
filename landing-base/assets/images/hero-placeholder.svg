@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="560" viewBox="0 0 760 560" role="img" aria-labelledby="title desc">
+  <title id="title">Ilustración provisional del servicio</title>
+  <desc id="desc">Panel visual editable para reemplazar por una imagen real de la empresa.</desc>
+  <rect width="760" height="560" rx="28" fill="#F7FAFC"/>
+  <rect x="64" y="72" width="632" height="416" rx="24" fill="#FFFFFF" stroke="#D8E2E8" stroke-width="2"/>
+  <rect x="104" y="116" width="240" height="28" rx="8" fill="#1F7A8C"/>
+  <rect x="104" y="166" width="420" height="18" rx="9" fill="#D8E2E8"/>
+  <rect x="104" y="198" width="360" height="18" rx="9" fill="#D8E2E8"/>
+  <rect x="104" y="250" width="172" height="54" rx="12" fill="#EF8354"/>
+  <rect x="304" y="250" width="172" height="54" rx="12" fill="#F7FAFC" stroke="#1F7A8C" stroke-width="2"/>
+  <circle cx="563" cy="337" r="92" fill="#CFE7EC"/>
+  <path d="M512 347l35 35 72-92" fill="none" stroke="#1F7A8C" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="104" y="378" width="130" height="54" rx="14" fill="#F7FAFC" stroke="#D8E2E8"/>
+  <rect x="258" y="378" width="130" height="54" rx="14" fill="#F7FAFC" stroke="#D8E2E8"/>
+  <rect x="412" y="378" width="130" height="54" rx="14" fill="#F7FAFC" stroke="#D8E2E8"/>
+</svg>

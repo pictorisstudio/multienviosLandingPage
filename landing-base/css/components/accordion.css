@@ -1,0 +1,7 @@
+.accordion { border-top: 1px solid var(--color-border); }
+.accordion__item { border-bottom: 1px solid var(--color-border); }
+.accordion__button { align-items: center; background: transparent; border: 0; color: var(--color-heading); display: flex; font-weight: 750; gap: 1rem; justify-content: space-between; min-height: 76px; padding: 1rem 0; text-align: left; width: 100%; }
+.accordion__icon { align-items: center; border: 1px solid var(--color-border); border-radius: 50%; color: var(--blue); display: flex; flex: 0 0 auto; height: 44px; justify-content: center; transition: transform var(--transition-fast), background var(--transition-fast); width: 44px; }
+.accordion__button[aria-expanded="true"] .accordion__icon { background: var(--yellow); color: var(--blue); transform: rotate(45deg); }
+.accordion__panel { color: var(--color-text-muted); display: grid; grid-template-rows: 0fr; transition: grid-template-rows var(--transition-normal); }.accordion__panel.is-open { grid-template-rows: 1fr; }.accordion__content { overflow: hidden; }.accordion__content p { max-width: 650px; padding: 0 3rem 1.5rem 0; }
+[data-theme="dark"] .accordion__icon { color: var(--white); }

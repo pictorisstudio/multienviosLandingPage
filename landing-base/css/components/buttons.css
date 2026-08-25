@@ -1,0 +1,13 @@
+.button { align-items: center; border: 1px solid transparent; border-radius: var(--radius-pill); display: inline-flex; font-size: .88rem; font-weight: 800; gap: .8rem; justify-content: center; min-height: 48px; padding: .8rem 1.25rem; text-decoration: none; transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast); }
+.button:hover { box-shadow: var(--shadow-sm); transform: translateY(-2px); }
+.button--large { min-height: 58px; padding-inline: 1.6rem; }
+.button--primary { background: var(--blue); color: var(--white); }
+.button--primary:hover { background: var(--turquoise); }
+.button--accent { background: var(--yellow); color: var(--blue); }
+.button--accent:hover { background: var(--white); }
+.button--light { background: var(--white); color: var(--blue); }
+.text-link { align-items: center; color: var(--blue); display: inline-flex; font-size: .9rem; font-weight: 800; gap: .7rem; min-height: 44px; padding-block: .55rem; text-decoration: none; }
+.text-link span { transition: transform var(--transition-fast); }
+.text-link:hover span { transform: translate(3px,-3px); }
+.text-link--light { color: var(--white); }
+[data-theme="dark"] .text-link:not(.text-link--light) { color: var(--white); }

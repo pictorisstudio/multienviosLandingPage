@@ -1,0 +1,28 @@
+.card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-lg);
+}
+
+.card__icon {
+  align-items: center;
+  background: var(--color-surface-strong);
+  border-radius: var(--radius-md);
+  color: var(--color-primary);
+  display: inline-flex;
+  font-weight: 900;
+  height: 44px;
+  justify-content: center;
+  margin-bottom: var(--space-md);
+  width: 44px;
+}
+
+.card__title {
+  margin-bottom: var(--space-sm);
+}
+
+.card__text {
+  color: var(--color-text-muted);
+}
