@@ -9,6 +9,4 @@ em { color: var(--blue); font-style: normal; }
 .eyebrow > span { background: var(--turquoise); border-radius: 50%; height: .6rem; width: .6rem; }
 .eyebrow--light { color: var(--white); }
 .mini-label { color: var(--turquoise); font-size: .66rem; font-weight: 800; letter-spacing: .1em; }
-.placeholder-note { color: var(--color-text-muted); font-size: .72rem; }
-
 [data-theme="dark"] em { color: var(--turquoise); }
