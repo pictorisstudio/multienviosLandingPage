@@ -7,10 +7,12 @@
     <meta name="description" content="Mockup provisional de Multienvíos: compara y gestiona alternativas logísticas nacionales desde un solo lugar.">
     <meta name="robots" content="noindex, nofollow">
     <title>Multienvíos — Muchas rutas. Un solo lugar.</title>
+    <link rel="icon" type="image/png" sizes="152x152" href="assets/icons/LogoMultienvios.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/icons/LogoMultienvios.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css?v=7">
+    <link rel="stylesheet" href="css/main.css?v=9">
     <script>
       try {
         document.documentElement.dataset.theme = localStorage.getItem("multienvios-theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
@@ -27,9 +29,7 @@
       <header class="site-header" data-navbar>
         <div class="container navbar">
           <a class="wordmark" href="#inicio" aria-label="Multienvíos, ir al inicio">
-            <span class="wordmark__mark" aria-hidden="true"><i></i><i></i><i></i></span>
-            <span>multi<strong>envíos</strong></span>
-            <small>LOGO PROVISIONAL</small>
+            <img class="wordmark__logo" src="assets/images/LogoCompleto.png" width="946" height="178" alt="">
           </a>
 
           <nav class="navbar__menu" id="menu-principal" aria-label="Navegación principal" data-navbar-menu>
@@ -114,7 +114,20 @@
               </div>
             </div>
           </div>
-          <div class="hero-ticker" aria-hidden="true"><div>COMPARA <span>•</span> ELIGE <span>•</span> ENVÍA <span>•</span> GESTIONA <span>•</span> COMPARA <span>•</span> ELIGE <span>•</span> ENVÍA <span>•</span> GESTIONA <span>•</span></div></div>
+          <div class="hero-ticker" aria-hidden="true">
+            <div class="hero-ticker__track">
+              <div class="hero-ticker__group">
+                <span>COMPARA</span><i>•</i><span>ELIGE</span><i>•</i><span>ENVÍA</span><i>•</i><span>GESTIONA</span><i>•</i>
+                <span>COMPARA</span><i>•</i><span>ELIGE</span><i>•</i><span>ENVÍA</span><i>•</i><span>GESTIONA</span><i>•</i>
+                <span>COMPARA</span><i>•</i><span>ELIGE</span><i>•</i><span>ENVÍA</span><i>•</i><span>GESTIONA</span><i>•</i>
+              </div>
+              <div class="hero-ticker__group">
+                <span>COMPARA</span><i>•</i><span>ELIGE</span><i>•</i><span>ENVÍA</span><i>•</i><span>GESTIONA</span><i>•</i>
+                <span>COMPARA</span><i>•</i><span>ELIGE</span><i>•</i><span>ENVÍA</span><i>•</i><span>GESTIONA</span><i>•</i>
+                <span>COMPARA</span><i>•</i><span>ELIGE</span><i>•</i><span>ENVÍA</span><i>•</i><span>GESTIONA</span><i>•</i>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section class="partners-strip" aria-label="Transportadoras aliadas provisionales">
@@ -228,9 +241,9 @@
 
       <footer class="site-footer">
         <div class="container site-footer__top">
-          <div><a class="wordmark wordmark--footer" href="#inicio"><span class="wordmark__mark" aria-hidden="true"><i></i><i></i><i></i></span><span>multi<strong>envíos</strong></span></a><p>Una plataforma para comparar y gestionar envíos nacionales desde un solo lugar.</p></div>
+          <div><a class="wordmark wordmark--footer" href="#inicio" aria-label="Multienvíos, volver al inicio"><img class="wordmark__logo" src="assets/images/LogoCompletoFooter.png?v=1" width="964" height="203" alt=""></a><p>Una plataforma para comparar y gestionar envíos nacionales desde un solo lugar.</p></div>
           <div><strong>Explora</strong><a href="#plataforma">Plataforma</a><a href="#como-funciona">Cómo funciona</a><a href="#soluciones">Soluciones</a></div>
-          <div><strong>Información</strong><a href="#faq">Preguntas frecuentes</a><a href="#">Privacidad [provisional]</a><a href="#">Términos [provisional]</a></div>
+          <div><strong>Información</strong><a href="#faq">Preguntas frecuentes</a><a href="privacidad.html">Política de privacidad</a><a href="terminos.html">Términos y condiciones</a></div>
           <div><strong>Contacto</strong><a href="#">correo@provisional.com</a><a href="#">WhatsApp provisional</a><span>Colombia</span></div>
         </div>
         <div class="container site-footer__bottom"><span>© <span data-current-year></span> Multienvíos</span><span>Mockup de alta fidelidad · v1.0</span><a href="#inicio">Volver arriba ↑</a></div>

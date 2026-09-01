@@ -248,7 +248,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-ticker div { animation: none; }
+  .hero-ticker__track { animation: none; transform: translateX(-12%); }
   .brand-statement.is-visible .brand-statement__route path,
   .brand-statement.is-visible .brand-statement__route circle { animation: none; }
   .route-field__node { display: none; }
