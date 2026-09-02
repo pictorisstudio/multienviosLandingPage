@@ -3,6 +3,9 @@
 .navbar { align-items: center; display: flex; gap: 1rem; justify-content: space-between; min-height: 82px; }
 .wordmark { align-items: center; color: var(--blue); display: inline-flex; font-size: 1.25rem; font-weight: 500; gap: .6rem; letter-spacing: -.05em; min-height: 44px; position: relative; text-decoration: none; }
 .wordmark__logo { height: auto; object-fit: contain; width: clamp(158px, 15vw, 194px); }
+.wordmark__logo--dark { display: none; }
+[data-theme="dark"] .wordmark__logo--light { display: none; }
+[data-theme="dark"] .wordmark__logo--dark { display: block; }
 .wordmark strong { font-weight: 900; }
 .wordmark small { bottom: -.4rem; color: var(--color-text-muted); font-size: .42rem; left: 2.25rem; letter-spacing: .12em; position: absolute; }
 .wordmark__mark { display: flex; gap: 2px; transform: skewY(-18deg); }

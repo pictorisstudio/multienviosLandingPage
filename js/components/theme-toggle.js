@@ -1,5 +1,3 @@
-const STORAGE_KEY = "multienvios-theme";
-
 export function initThemeToggle(root = document) {
   const button = root.querySelector("[data-theme-toggle]");
   const themeColor = root.querySelector('meta[name="theme-color"]');
@@ -11,14 +9,9 @@ export function initThemeToggle(root = document) {
     themeColor?.setAttribute("content", theme === "dark" ? "#263746" : "#FFFFFF");
   };
 
-  applyTheme(document.documentElement.dataset.theme || "light");
+  applyTheme("light");
   button.addEventListener("click", () => {
     const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
-    try {
-      localStorage.setItem(STORAGE_KEY, nextTheme);
-    } catch (_) {
-      // The visual preference still applies when storage is unavailable.
-    }
     applyTheme(nextTheme);
   });
 }
