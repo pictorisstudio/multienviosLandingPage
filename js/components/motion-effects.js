@@ -16,6 +16,7 @@ export function initMotionEffects(root = document) {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
       entry.target.classList.add("is-motion-active");
+      // La entrada se activa una vez; los bucles posteriores pertenecen al CSS o al SVG.
       observer.unobserve(entry.target);
     });
   }, { threshold: 0.28 });

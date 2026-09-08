@@ -1,137 +1,62 @@
-# Landing Base HTML/CSS/JS
+# Landing page Multienvíos
 
-Plantilla base profesional para una landing page reutilizable, responsive, accesible y preparada para una futura migración a Ionic Angular. Esta versión no usa dependencias externas ni frameworks: solo HTML5, CSS3 y JavaScript ES6 con módulos nativos.
+Landing en HTML, CSS y JavaScript con módulos nativos. La organización actual busca facilitar el mantenimiento y una próxima migración a Ionic Angular.
 
-## Estructura
+## Dónde trabajar
 
-```text
-landing-base/
-├── index.html
-├── assets/
-│   ├── images/
-│   └── icons/
-├── css/
-│   ├── components/
-│   ├── sections/
-│   ├── variables.css
-│   └── main.css
-└── js/
-    ├── components/
-    ├── utils/
-    ├── app.js
-    └── config.js
-```
+- `index.html`: contiene la página completa, incluidos sus SVG. Las secciones siguen juntas para poder trasladarlas inicialmente a una sola plantilla Angular.
+- `privacidad.html` y `terminos.html`: páginas legales con contenido pendiente de completar.
+- `css/main.css`: entrada de estilos compartida. El orden de sus importaciones es importante.
+- `css/landing.css`: composición de la página, footer y reglas responsive, agrupados por bloques.
+- `css/components/`: estilos compartidos del menú, botones y acordeón; `motion.css` contiene animaciones y algunos ajustes visuales que dependen de cargarse después del landing.
+- `css/pages/legal.css`: composición de las páginas legales.
+- `css/variables.css`, `reset.css`, `typography.css`, `layout.css` y `utilities.css`: base visual común.
+- `js/app.js`: inicializa las interacciones. Cada módulo comprueba si su contenido existe, porque esta entrada también se usa en las páginas legales.
+- `assets/`: imágenes, logos e iconos.
 
-`assets/icons/.gitkeep` conserva la carpeta de iconos vacía hasta que se agreguen iconos reales.
+Los archivos de `css/sections/` y los estilos `cards.css`, `forms.css` y `floating-actions.css` no se importan actualmente. Se conservan como material de la base anterior; editarlos no cambia la página publicada. Los módulos `contact-form.js`, `floating-actions.js`, `config.js` y `utils/validation.js` tampoco forman parte del grafo de importaciones de `app.js`. Revisar su utilidad cuando se incorporen esas funciones.
 
 ## Ejecución local
 
-Por usar módulos JavaScript nativos, abre la plantilla desde un servidor local:
+Desde la carpeta del proyecto, con Python instalado:
 
-```bash
-cd landing-base
+```sh
 python -m http.server 8080
 ```
 
-Luego visita `http://localhost:8080`.
+Abrir `http://localhost:8080`. Los módulos JavaScript necesitan que la página se sirva por HTTP.
 
-## Personalización rápida
+## Convenciones de mantenimiento
 
-Colores y tipografías: edita `css/variables.css`. Las variables están pensadas para trasladarse luego a `src/theme/variables.scss` en Ionic.
+Usamos dos espacios de sangría y comentarios breves para explicar decisiones y dependencias.
 
-Textos: reemplaza los marcadores como `[NOMBRE DE LA EMPRESA]`, `[PROPUESTA DE VALOR]`, `[DESCRIPCIÓN DEL SERVICIO]`, `[CORREO ELECTRÓNICO]`, `[CIUDAD]` y similares en `index.html`.
+La tipografía de la web es Montserrat, cargada desde Google Fonts en las tres páginas y definida en `css/variables.css`.
 
-Imágenes: cambia los SVG provisionales en `assets/images/` por imágenes reales. Mantén `width`, `height`, `alt` y `loading="lazy"` cuando corresponda.
+Los logos completos están en `assets/logos/`, el favicon en `assets/icons/` y las fotografías y el mapa en `assets/images/`. Los SVG de la base anterior se conservan en `assets/images/provisionales/`. Los nombres describen el contenido o el fondo para el que se utiliza cada recurso.
 
-WhatsApp: edita `whatsappNumber` y `whatsappMessage` en `js/config.js`. Los enlaces con `data-whatsapp-link` se actualizan automáticamente.
+Mantener los nombres de clases y atributos `data-*`: conectan HTML, estilos e interacciones. Agregar comentarios cuando expliquen una dependencia, una decisión o una limitación; no hace falta narrar cada propiedad.
 
-Formulario: `js/components/contact-form.js` simula el envío. La función `sendContactRequest()` es el punto preparado para conectar una API con `fetch`.
+En `landing.css`, los estilos base siguen el orden de la página y los ajustes responsive permanecen al final. No reordenar declaraciones o media queries sin revisar la cascada. Los parámetros `?v=` de los recursos se usan para renovar la caché cuando se publican cambios.
 
-Analítica: `js/utils/analytics.js` expone `trackEvent()` y registra eventos simulados en consola. Ahí se pueden conectar Google Analytics, GTM, Meta Pixel u otra herramienta.
+## Preparación para Ionic Angular
 
-## Eventos preparados
+La primera migración puede tener una sola `LandingPage` con su HTML, SCSS y TypeScript. No es necesario crear un componente por sección ni reemplazar automáticamente las etiquetas semánticas por controles Ionic.
 
-- `click_primary_cta`
-- `click_secondary_cta`
-- `click_whatsapp`
-- `open_mobile_menu`
-- `submit_contact_form`
-- `contact_form_success`
-- `contact_form_error`
-- `open_faq`
-- `scroll_50_percent`
-- `scroll_90_percent`
+Extraer componentes cuando haya reutilización o comportamiento propio que lo justifique. Header y footer son candidatos porque también aparecen en las páginas legales; los bloques de contenido pueden seguir dentro de la página.
 
-## Tabla de migración a Ionic
+- Conservar textos, SVG, clases y atributos de accesibilidad al trasladar el HTML.
+- Llevar los tokens visuales a los estilos de tema y mantener reset, tipografía y utilidades como estilos globales.
+- Separar estilos de página y compartidos teniendo en cuenta que los selectores de tema actuales dependen de `data-theme` en `html`. El encapsulamiento de Angular requiere revisar ese alcance.
+- Sustituir la inicialización con `DOMContentLoaded` y los listeners manuales por estado y eventos de Angular. Los observadores y temporizadores deberán liberarse cuando la página se destruya.
+- Mantener la analítica detrás de un único servicio y conectar las consultas cuando exista la API.
+- Adaptar enlaces y desplazamiento al contenedor de scroll elegido: actualmente dependen de `window` y del documento; una página con `ion-content` puede usar otro contenedor.
 
-| Sección actual | Archivo relacionado | Componente futuro | Equivalente Ionic posible | Cambios durante migración |
-|---|---|---|---|---|
-| `site-header` | `index.html`, `css/components/navbar.css`, `js/components/navbar.js` | `HeaderComponent` | `ion-header`, `ion-toolbar`, Angular Router | Mover estado del menú a TypeScript y reemplazar navegación si hay rutas. |
-| `hero-section` | `css/sections/hero.css` | `HeroComponent` | HTML semántico dentro de `ion-content` | Mantener `h1`, enlaces y SEO como HTML semántico. |
-| `benefits-section` | `css/sections/benefits.css`, `css/components/cards.css` | `BenefitsComponent` | `ion-card` opcional | Convertir datos a arreglo tipado y renderizar con `*ngFor`. |
-| `services-section` | `css/sections/services.css` | `ServicesComponent` | `ion-card`, `ion-button` | Separar servicios en modelo o servicio de contenido. |
-| `process-section` | `css/sections/process.css` | `ProcessComponent` | HTML/`ion-list` opcional | Mantener numeración accesible con lista ordenada si favorece SEO. |
-| `testimonials-section` | `css/sections/testimonials.css` | `TestimonialsComponent` | `ion-card`, futuro carrusel | Implementar carrusel propio o librería aprobada si se requiere. |
-| `faq-section` | `css/sections/faq.css`, `js/components/accordion.js` | `FaqComponent` | `ion-accordion-group` o componente Angular accesible | Reescribir control de estado con bindings Angular y ARIA. |
-| `contact-section` | `css/sections/contact.css`, `js/components/contact-form.js` | `ContactComponent` / `ContactFormComponent` | `ion-input`, `ion-select`, `ion-textarea`, Reactive Forms | Migrar validación a Angular Reactive Forms y `ContactService`. |
-| `site-footer` | `css/sections/footer.css` | `FooterComponent` | HTML semántico | Mantener enlaces reales y datos estructurados donde aplique. |
-| `floating-actions` | `css/components/floating-actions.css`, `js/components/floating-actions.js` | `FloatingActionsComponent` | `ion-fab`, `ion-fab-button` | Controlar visibilidad con listener Angular o directiva. |
+## Comportamiento que conviene preservar
 
-## Propuesta de estructura Ionic Angular
+La página comienza en tema claro. El cambio de tema también cambia el logo del header. Los enlaces al cotizador desplazan la vista sin añadir un fragmento a la URL. El comparador conserva una transición visual de 850 ms mientras se incorpora su integración real.
 
-```text
-src/
-├── app/
-│   ├── components/
-│   │   ├── header/
-│   │   ├── hero/
-│   │   ├── benefits/
-│   │   ├── services/
-│   │   ├── process/
-│   │   ├── testimonials/
-│   │   ├── faq/
-│   │   ├── contact-form/
-│   │   ├── floating-actions/
-│   │   └── footer/
-│   ├── pages/
-│   │   └── landing/
-│   ├── services/
-│   │   ├── analytics.service.ts
-│   │   └── contact.service.ts
-│   └── models/
-├── assets/
-└── theme/
-    └── variables.scss
-```
+El carrusel utiliza dos grupos iguales para cerrar el bucle. Las animaciones de entrada se activan una vez; las rutas continuas se controlan en CSS o SVG. Conservar la alternativa para usuarios que prefieren movimiento reducido.
 
-## Recomendaciones Ionic
+## Revisión después de un cambio
 
-Reemplaza `<button>` por `ion-button` cuando sea una acción de interfaz. Usa `ion-input`, `ion-textarea` e `ion-select` en formularios. Considera `ion-card` para beneficios, servicios y testimonios si el sistema visual de Ionic aporta consistencia.
-
-No reemplaces automáticamente todo el HTML. Conviene conservar `header`, `main`, `section`, `footer`, `h1`-`h3`, listas y enlaces reales para mantener SEO, accesibilidad y semántica.
-
-## Código reutilizable
-
-Reutilizable casi directo: variables visuales, nombres de clases, contenido HTML semántico, estructura de secciones, estrategia mobile-first y tokens de diseño.
-
-Debe reescribirse: manipulación DOM de `navbar.js`, `accordion.js`, `contact-form.js` y `floating-actions.js`. En Ionic Angular debería convertirse en componentes, servicios TypeScript y formularios reactivos.
-
-Archivos candidatos para `src/theme`: `css/variables.css`, parte de `typography.css`, tokens de `layout.css` y utilidades globales.
-
-Lógica candidata a servicios TypeScript: `analytics.js` como `analytics.service.ts`, envío del formulario como `contact.service.ts`, configuración editable como modelos o environment/config.
-
-## Checklist antes de publicar
-
-- Reemplazar todos los marcadores entre corchetes.
-- Cambiar imágenes provisionales por activos reales optimizados.
-- Actualizar `title`, `meta description`, canonical, Open Graph y Twitter Card.
-- Revisar JSON-LD con datos reales.
-- Configurar WhatsApp en `js/config.js`.
-- Conectar el formulario a una API real si se necesita recepción de datos.
-- Añadir enlaces reales a privacidad, términos y redes sociales.
-- Verificar contraste con la paleta final.
-- Probar desde 320 px de ancho.
-- Revisar navegación por teclado, foco visible y mensajes de error.
-- Validar que no exista desplazamiento horizontal.
-- Confirmar que no haya errores de consola.
-- Medir rendimiento con Lighthouse o herramienta equivalente.
+Comprobar escritorio y móvil, tema claro y oscuro, menú con teclado, acordeón, navegación al cotizador y regreso desde las páginas legales. Revisar especialmente los saltos de línea, la ausencia de desplazamiento horizontal y los bucles de las animaciones.

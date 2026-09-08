@@ -1,10 +1,13 @@
+/* Base compartida por el landing y las páginas legales. El orden forma parte de la cascada. */
 @import url("./reset.css?v=4");
-@import url("./variables.css?v=4");
+@import url("./variables.css?v=5");
 @import url("./typography.css?v=4");
 @import url("./layout.css?v=4");
 @import url("./utilities.css?v=4");
+/* Controles compartidos. Los estilos propios de la página se cargan después. */
 @import url("./components/buttons.css?v=4");
 @import url("./components/navbar.css?v=7");
 @import url("./components/accordion.css?v=4");
-@import url("./landing.css?v=9");
-@import url("./components/motion.css?v=7");
+@import url("./landing.css?v=10");
+/* Incluye ajustes visuales sobre landing.css; mantener esta importación al final. */
+@import url("./components/motion.css?v=9");

@@ -18,7 +18,10 @@ export function initAccordion(root = document) {
       button.addEventListener("keydown", (event) => {
         if (!["ArrowDown", "ArrowUp", "Home", "End"].includes(event.key)) return;
         event.preventDefault();
-        const nextIndex = event.key === "Home" ? 0 : event.key === "End" ? buttons.length - 1 : event.key === "ArrowDown" ? index + 1 : index - 1;
+        const nextIndex =
+          event.key === "Home" ? 0 :
+          event.key === "End" ? buttons.length - 1 :
+          event.key === "ArrowDown" ? index + 1 : index - 1;
         buttons[(nextIndex + buttons.length) % buttons.length].focus();
       });
     });

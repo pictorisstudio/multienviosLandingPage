@@ -6,6 +6,7 @@ import { initComparison, initQuoteNavigation } from "./components/comparison.js"
 import { initMotionEffects } from "./components/motion-effects.js";
 import { bindAnalyticsEvents } from "./utils/analytics.js";
 
+// Las tres páginas comparten esta entrada. Cada inicializador comprueba si existe su contenido.
 document.addEventListener("DOMContentLoaded", () => {
   initNavbar();
   initAccordion();

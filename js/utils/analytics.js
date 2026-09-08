@@ -1,7 +1,7 @@
 const firedScrollEvents = new Set();
 
 export function trackEvent(eventName, payload = {}) {
-  // Connect Google Analytics, GTM, Meta Pixel, or another provider here later.
+  // Punto único para conectar el proveedor de analítica sin modificar los controles de la página.
   console.info("[analytics:event]", eventName, payload);
 }
 

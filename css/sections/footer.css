@@ -15,9 +15,7 @@
   width: 180px;
 }
 
-.site-footer__links,
-.site-footer__social,
-.site-footer__contact {
+.site-footer__links, .site-footer__social, .site-footer__contact {
   display: grid;
   gap: var(--space-sm);
   list-style: none;
@@ -45,4 +43,5 @@
   .site-footer__grid {
     grid-template-columns: 1.3fr 0.8fr 0.8fr 1fr;
   }
+
 }

@@ -4,7 +4,7 @@ import { validateField, setFieldError } from "../utils/validation.js";
 import { trackEvent } from "../utils/analytics.js";
 
 async function sendContactRequest(formData) {
-  // Replace this simulation with fetch("/api/contact", { method: "POST", body: formData }) when a backend exists.
+  // Módulo reservado: app.js todavía no lo utiliza. Conectar aquí la API cuando se incorpore el formulario.
   await new Promise((resolve) => window.setTimeout(resolve, siteConfig.formSimulationDelay));
   return { ok: true, reference: crypto.randomUUID?.() ?? Date.now().toString() };
 }

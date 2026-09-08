@@ -49,12 +49,12 @@ No se deben introducir colores de marca adicionales. Variaciones visuales deber�
 
 ## Tipografía cerrada
 
-La única familia tipográfica es **Inter**.
+La única familia tipográfica es **Montserrat**.
 
-- Titulares: Inter 700–800, compactos y con alta presencia.
-- Subtítulos: Inter 600–700.
-- Texto de lectura: Inter 400–500, con longitud de línea controlada.
-- Etiquetas y datos: Inter 500–700; mayúsculas solo en piezas breves.
+- Titulares: Montserrat 700–800, compactos y con alta presencia.
+- Subtítulos: Montserrat 600–700.
+- Texto de lectura: Montserrat 400–500, con longitud de línea controlada.
+- Etiquetas y datos: Montserrat 500–700; mayúsculas solo en piezas breves.
 - La expresividad se obtiene mediante escala, peso, espaciado y composición, no mediante otra familia tipográfica.
 
 ## Principios de experiencia
@@ -73,7 +73,7 @@ La única familia tipográfica es **Inter**.
 
 - Adoptar: mensaje hero muy contundente, escala tipográfica, contraste fuerte, narrativa por pasos y personalidad visual memorable.
 - Adaptar: convertir la idea de “poner fin al problema” en una tensión logística concreta, sin agresividad innecesaria.
-- Evitar: saturación de amarillo, tipografías ajenas a Inter y una estética ilustrativa que eclipse el producto.
+- Evitar: saturación de amarillo, tipografías ajenas a Montserrat y una estética ilustrativa que eclipse el producto.
 
 ### Maggie
 
@@ -106,7 +106,7 @@ Una primera arquitectura de contenido a validar:
 ## Restricciones permanentes
 
 - No usar colores distintos a los seis definidos.
-- No usar otra tipografía diferente de Inter.
+- No usar otra tipografía diferente de Montserrat.
 - No copiar la identidad, ilustraciones, textos o composición exacta de las referencias.
 - No presentar a Multienvíos como transportadora.
 - No sacrificar comprensión, accesibilidad o rendimiento por novedad visual.

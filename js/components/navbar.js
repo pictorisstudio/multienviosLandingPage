@@ -7,11 +7,13 @@ export function initNavbar(root = document) {
   const menu = qs("[data-navbar-menu]", root);
   const links = qsa(".navbar__link", root);
   if (!header || !toggle || !menu) return;
+  // Debe coincidir con el breakpoint del menú en css/components/navbar.css.
   const desktopQuery = window.matchMedia("(min-width: 940px)");
 
   const syncMenuA11y = () => {
     const isOpen = toggle.getAttribute("aria-expanded") === "true";
     const shouldDisable = !isOpen && !desktopQuery.matches;
+    // El menú móvil oculto tampoco debe recibir foco al navegar con el teclado.
     menu.inert = shouldDisable;
     menu.setAttribute("aria-hidden", String(shouldDisable));
   };
@@ -46,7 +48,14 @@ export function initNavbar(root = document) {
     const fromTop = window.scrollY + 120;
     links.forEach((link) => {
       const section = qs(link.getAttribute("href"));
-      link.classList.toggle("is-active", Boolean(section && section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop));
+      link.classList.toggle(
+        "is-active",
+        Boolean(
+          section &&
+          section.offsetTop <= fromTop &&
+          section.offsetTop + section.offsetHeight > fromTop
+        )
+      );
     });
   };
 
@@ -65,4 +74,3 @@ export function updateCurrentYear(root = document) {
     element.textContent = new Date().getFullYear();
   });
 }
-
