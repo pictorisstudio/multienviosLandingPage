@@ -1,3 +1,12 @@
+/* Fuente local para evitar que un fallo de Google Fonts cambie la composición. */
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/montserrat-variable.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
 body {
   background: var(--color-background);
   color: var(--color-text);
