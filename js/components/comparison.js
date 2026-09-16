@@ -1,19 +1,25 @@
 export function initComparison(root = document) {
   const button = root.querySelector("[data-run-comparison]");
   const results = root.querySelector("[data-comparison-results]");
-  if (!button || !results) return;
+  const form = root.querySelector("[data-quote-form]");
+  const status = root.querySelector("[data-quote-status]");
+  if (!button || !results || !form) return;
 
-  button.addEventListener("click", () => {
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (button.disabled) return;
     button.disabled = true;
-    // El primer nodo es el texto; el icono que lo acompaña debe permanecer intacto.
-    button.firstChild.textContent = "Buscando alternativas ";
+    results.setAttribute("aria-busy", "true");
+    const values = new FormData(form);
+    status.textContent = "Buscando opciones para la ruta seleccionada.";
     results.classList.add("is-loading");
 
     // Duración de la transición visual mientras se incorpora la consulta real al cotizador.
     window.setTimeout(() => {
       results.classList.remove("is-loading");
       button.disabled = false;
-      button.firstChild.textContent = "Comparar de nuevo ";
+      results.removeAttribute("aria-busy");
+      status.textContent = `Ruta seleccionada: ${values.get("origin")} a ${values.get("destination")}. Las tarifas se mostrarán cuando se conecte el cotizador.`;
     }, 850);
   });
 }

@@ -225,7 +225,18 @@
   display: none;
 }
 
+.navbar__login-mobile {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.navbar__cta:active,.navbar__login-mobile:active {
+  transform: scale(.96);
+}
+
 @media (min-width: 980px) {
+  .navbar__login-mobile { display: none; }
   .navbar__toggle {
     display: none;
   }

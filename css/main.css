@@ -6,8 +6,8 @@
 @import url("./utilities.css?v=4");
 /* Controles compartidos. Los estilos propios de la página se cargan después. */
 @import url("./components/buttons.css?v=4");
-@import url("./components/navbar.css?v=7");
+@import url("./components/navbar.css?v=8");
 @import url("./components/accordion.css?v=4");
-@import url("./landing.css?v=12");
+@import url("./landing.css?v=15");
 /* Incluye ajustes visuales sobre landing.css; mantener esta importación al final. */
 @import url("./components/motion.css?v=10");

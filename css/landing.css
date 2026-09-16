@@ -54,18 +54,31 @@
 }
 
 .hero-section__trust {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .7rem 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: .75rem;
   list-style: none;
   margin: .2rem 0 0;
   padding: 0;
 }
 
 .hero-section__trust li {
-  color: var(--color-text-muted);
-  font-size: .8rem;
-  font-weight: 650;
+  text-align: center;
+  color: var(--color-heading);
+  font-size: .95rem;
+  font-weight: 750;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .75rem;
+  padding: .5rem 0;
+}
+
+.hero-section__trust .line-icon {
+  width: 28px;
+  height: 28px;
+  color: var(--turquoise);
+  flex: none;
 }
 
 .hero-section__trust span {
@@ -189,7 +202,68 @@
 
 .route-input div {
   display: grid;
+  min-width: 0;
+  flex: 1;
 }
+
+.route-input label {
+  color: rgb(255 255 255 / .75);
+  font-size: .7rem;
+  letter-spacing: .08em;
+}
+
+.route-input select {
+  width: 100%;
+  min-width: 0;
+  min-height: 36px;
+  background: transparent;
+  color: var(--white);
+  border: 0;
+  font: inherit;
+  font-size: .85rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.route-input select option {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.route-input:focus-within {
+  outline: 2px solid var(--yellow);
+  outline-offset: 3px;
+}
+
+.route-dot { flex: none; }
+
+/* Fuera del contenedor de la página para conservar la posición al hacer scroll. */
+.whatsapp-button {
+  position: fixed;
+  right: max(1.25rem,env(safe-area-inset-right));
+  bottom: max(1.25rem,env(safe-area-inset-bottom));
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  box-shadow: 0 4px 18px rgb(0 0 0 / .22);
+  transition: transform .2s ease, background .2s ease;
+}
+
+/* Compensación óptica de la cola del globo, que desplaza el peso del símbolo. */
+.whatsapp-button svg {
+  display: block;
+  width: 32px;
+  height: 32px;
+  transform: translate(1px,-1px);
+}
+.whatsapp-button:hover { background: #128c7e; transform: translateY(-3px); }
+.whatsapp-button:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+.whatsapp-button:active { transform: scale(.95); }
 
 .route-input small {
   color: rgb(255 255 255 / .55);
@@ -533,6 +607,10 @@
 
 .comparison-bars span:nth-child(2) {
   background: var(--blue);
+}
+
+[data-theme="dark"] .comparison-bars span:nth-child(2) {
+  background: var(--white);
 }
 
 .comparison-bars span:nth-child(3) {
@@ -1239,7 +1317,14 @@
   }
 
   .hero-section__trust {
-    gap: .45rem 1rem;
+    grid-template-columns: 1fr;
+    gap: .65rem;
+  }
+
+  .hero-section__trust li {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
   }
 
   .hero-visual {
@@ -1257,7 +1342,7 @@
 
   .route-inputs {
     gap: .5rem;
-    grid-template-columns: repeat(2,minmax(0,1fr));
+    grid-template-columns: 1fr;
     margin-block: 1rem;
   }
 
@@ -1317,6 +1402,16 @@
   .locations-illustration {
     height: 200px;
     width: min(100%,300px);
+  }
+
+  .proof-stat {
+    grid-template-columns: 4.5rem minmax(0,1fr);
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .proof-stat span {
+    max-width: none;
   }
 
   .proof-stat strong {
