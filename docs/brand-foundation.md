@@ -1,14 +1,14 @@
-# Fundamentos de marca y dirección de la landing — Multienvíos
+# Fundamentos de marca y dirección de la landing — Todoenviós
 
 ## Razón de ser
 
 **Una plataforma, no una transportadora más.**
 
-Multienvíos centraliza diferentes alternativas logísticas para que personas y empresas puedan comparar y gestionar envíos nacionales desde un solo lugar.
+Todoenviós centraliza diferentes alternativas logísticas para que personas y empresas puedan comparar y gestionar envíos nacionales desde un solo lugar.
 
 La landing debe dejar claras tres ideas, en este orden:
 
-1. Multienvíos no compite como otra transportadora: organiza y simplifica el acceso a varias alternativas.
+1. Todoenviós no compite como otra transportadora: organiza y simplifica el acceso a varias alternativas.
 2. El usuario puede comparar y decidir con mayor claridad antes de enviar.
 3. La operación se gestiona desde una experiencia única, cercana y confiable.
 
@@ -78,7 +78,7 @@ La única familia tipográfica es **Montserrat**.
 ### Maggie
 
 - Adoptar: tono humano, producto visible desde el primer pantallazo, navegación amistosa, composición enérgica y beneficios relacionados con situaciones reales.
-- Adaptar: usar tarjetas, rutas y estados de envío como recursos cercanos dentro de la paleta de Multienvíos.
+- Adaptar: usar tarjetas, rutas y estados de envío como recursos cercanos dentro de la paleta de Todoenviós.
 - Evitar: colores pastel externos, tipografía manuscrita y exceso de tono lúdico para decisiones logísticas empresariales.
 
 ### Sandra Creates
@@ -108,5 +108,5 @@ Una primera arquitectura de contenido a validar:
 - No usar colores distintos a los seis definidos.
 - No usar otra tipografía diferente de Montserrat.
 - No copiar la identidad, ilustraciones, textos o composición exacta de las referencias.
-- No presentar a Multienvíos como transportadora.
+- No presentar a Todoenviós como transportadora.
 - No sacrificar comprensión, accesibilidad o rendimiento por novedad visual.

@@ -1,4 +1,4 @@
-# Landing page Multienvíos
+# Landing page Todoenvíos
 
 Landing en HTML, CSS y JavaScript con módulos nativos. La organización actual busca facilitar el mantenimiento y una próxima migración a Ionic Angular.
 
@@ -32,7 +32,7 @@ Usamos dos espacios de sangría y comentarios breves para explicar decisiones y 
 
 La tipografía de la web es Montserrat, alojada en `assets/fonts/` junto con su licencia OFL. Se carga desde `css/typography.css` sin depender de Google Fonts y se define en `css/variables.css`.
 
-Los favicon `favicon-multienvios-claro.png` y `favicon-multienvios-oscuro.png` responden al tema del navegador, independientemente del selector de tema de la página.
+Los favicon `favicon-todoenvios-claro.png` y `favicon-todoenvios-oscuro.png` responden al tema del navegador, independientemente del selector de tema de la página.
 
 Los logos completos están en `assets/logos/`, el favicon en `assets/icons/` y las fotografías y el mapa en `assets/images/`. Los SVG de la base anterior se conservan en `assets/images/provisionales/`. Los nombres describen el contenido o el fondo para el que se utiliza cada recurso.
 
